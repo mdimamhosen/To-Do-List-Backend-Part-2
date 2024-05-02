@@ -8,10 +8,10 @@ exports.updateTodo = async (req, res) => {
       { _id: id },
       { title: title, description: description, updatedAt: new Date() }
     );
-
+    const updatedTodo = await Todo.findById({ _id: id });
     res.status(200).json({
       success: true,
-      data: todo,
+      data: updatedTodo,
       message: "Updated Todo successfully",
     });
   } catch (error) {

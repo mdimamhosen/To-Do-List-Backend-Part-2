@@ -8,10 +8,7 @@ require("dotenv").config();
 const dbConnect = () => {
   // Use mongoose to connect to the MongoDB database using the DATABASE_URL from environment variables
   mongoose
-    .connect(process.env.DATABASE_URL, {
-      useNewUrlParser: true, // Use the new URL parser
-      useUnifiedTopology: true, // Use the new Server Discover and Monitoring engine
-    })
+    .connect(process.env.DATABASE_URL, {})
     .then(() => {
       // Log a success message if the connection is successful
       console.log("Connected to the database");
